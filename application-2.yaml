@@ -14,6 +14,3 @@ spec:
     targetRevision: v1.16.1
     helm:
       releaseName: sealed-secrets
-    path: nginx
-    repoURL: https://github.com/avenging/argocd-test.git
-    targetRevision: main
