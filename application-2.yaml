@@ -1,20 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-from-scratch
+  name: sealed-secrets
+  namespace: argocd
 spec:
   destination:
     namespace: default
     server: https://kubernetes.default.svc
   project: default
   source:
+    chart: sealed-secrets
+    repoURL: https://bitnami-labs.github.io/sealed-secrets
+    targetRevision: v1.16.1
     helm:
-      releaseName: application-from-helm
-      valueFiles:
-        - custom-values.yaml
-      #parameters:
-      #  - name: replicaCount
-      #    value: "3"
+      releaseName: sealed-secrets
     path: nginx
     repoURL: https://github.com/avenging/argocd-test.git
     targetRevision: main
