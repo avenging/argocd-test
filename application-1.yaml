@@ -8,5 +8,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: 
+    path: nginx
     repoURL: https://github.com/avenging/argocd-test.git
+    targetRevision: main
